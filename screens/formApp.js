@@ -86,6 +86,8 @@ export default function FormApp() {
         Alert.alert(error.message);
       } else {
         Alert.alert("Success", "data sent to supabase");
+        setScreen(0);
+        setFormData(initialState);
       }
     } else {
       storeData(formData);
