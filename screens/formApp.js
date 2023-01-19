@@ -6,6 +6,7 @@ import {
   Alert,
   TouchableWithoutFeedback,
   Keyboard,
+  Dimensions
 } from "react-native";
 import Constants from "expo-constants";
 import { Activities } from "./views/activities";
@@ -135,7 +136,8 @@ export default function FormApp() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "start",
+    justifyContent: "flex-start",
+    alignItems: "center",
     paddingTop: Constants.statusBarHeight,
     backgroundColor: "#ecf0f1",
     padding: 12,
@@ -147,13 +149,23 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   screen: {
+    width:"80%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#FAFBFC",
     padding: 16,
+    elevation: 5,
+    borderRadius: 10,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.26,
+    shadowRadius: 6,
   },
   btnContainer: {
-    // width: Dimensions.get('window') / 4,
+    width: Dimensions.get('window').width / 2,
     padding: 6,
     flexDirection: "row",
     justifyContent: "space-between",
