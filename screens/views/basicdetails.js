@@ -3,14 +3,11 @@ import { View, Text, TextInput, StyleSheet } from "react-native";
 export const BasicDetails = ({ formData, setFormData }) => {
   return (
     <View style={{ width: "100%" }}>
-      <Text style={{ textAlign: "center", fontSize: 26, letterSpacing: 0.875 }}>
-        BasicDetails
-      </Text>
       <View style={styles.formStyle}>
         <TextInput
           style={styles.textInput}
           placeholder="firstname"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.firstname}
           onChangeText={(firstname) => {
             setFormData({ ...formData, firstname });
@@ -21,7 +18,7 @@ export const BasicDetails = ({ formData, setFormData }) => {
         <TextInput
           style={styles.textInput}
           placeholder="lastname"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.lastname}
           onChangeText={(lastname) => {
             setFormData({ ...formData, lastname });
@@ -32,7 +29,7 @@ export const BasicDetails = ({ formData, setFormData }) => {
         <TextInput
           style={styles.textInput}
           placeholder="address"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.address}
           onChangeText={(address) => {
             setFormData({ ...formData, address });
@@ -44,7 +41,7 @@ export const BasicDetails = ({ formData, setFormData }) => {
           style={styles.textInput}
           placeholder="email"
           keyboardType="email-address"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.email}
           onChangeText={(email) => {
             setFormData({ ...formData, email });
@@ -56,7 +53,7 @@ export const BasicDetails = ({ formData, setFormData }) => {
           style={styles.textInput}
           placeholder="password"
           keyboardType="number-pad"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.password}
           onChangeText={(password) => {
             setFormData({ ...formData, password });
@@ -69,16 +66,18 @@ export const BasicDetails = ({ formData, setFormData }) => {
 
 const styles = StyleSheet.create({
   formStyle: {
-    backgroundColor: "red",
-    borderRadius: 15,
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "red",
+    borderRadius: 8,
     width: "100%",
     height: 45,
     justifyContent: "center",
     paddingStart: 20,
     marginVertical: 12,
-    color: "white",
   },
   textInput: {
-    color: "white",
+    color: "red",
   },
 });

@@ -4,14 +4,11 @@ export const Activities = ({ formData, setFormData }) => {
 
   return (
     <View style={{ width: "100%" }}>
-      <Text style={{ textAlign: "center", fontSize: 26, letterSpacing: 0.875 }}>
-        Activities
-      </Text>
       <View style={styles.formStyle}>
         <TextInput
           style={styles.textInput}
           placeholder="enter your company"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.company}
           onChangeText={(company) => {
             setFormData({ ...formData, company });
@@ -22,7 +19,7 @@ export const Activities = ({ formData, setFormData }) => {
         <TextInput
           style={styles.textInput}
           placeholder="enter your hobbies"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.hobbies}
           onChangeText={(hobbies) => {
             setFormData({ ...formData, hobbies });
@@ -35,16 +32,18 @@ export const Activities = ({ formData, setFormData }) => {
 
 const styles = StyleSheet.create({
   formStyle: {
-    backgroundColor: "red",
-    borderRadius: 15,
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "red",
+    borderRadius: 8,
     width: "100%",
     height: 45,
     justifyContent: "center",
     paddingStart: 20,
     marginVertical: 12,
-    color: "white",
   },
   textInput: {
-    color: "white",
+    color: "red",
   },
 });

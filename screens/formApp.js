@@ -64,8 +64,6 @@ export default function FormApp() {
   };
 
   const submitData = async () => {
-    console.log(formData);
-
     const isConnected = await Network.getNetworkStateAsync();
     if (isConnected.isConnected) {
       const { error } = await supa.auth.signUp({
@@ -86,15 +84,18 @@ export default function FormApp() {
 
       if (error) {
         Alert.alert(error.message);
+      } else {
+        Alert.alert("Success", "data sent to supabase");
       }
     } else {
       storeData(formData);
+      setScreen(0);
+      console.log(formData);
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>Register MultiStep Form</Text>
       <Text style={styles.paragraph}>{FormTitle[screen]}</Text>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.screen}>{dps()}</View>
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     margin: 24,
     fontSize: 18,
     fontWeight: "bold",
-    textAlign: "center",
+    textAlign: "left",
   },
   screen: {
     alignItems: "center",

@@ -1,17 +1,13 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput } from "react-native";
 
 export const Skills = ({ formData, setFormData }) => {
-
   return (
-    <View style={{ width: '100%' }}>
-      <Text style={{ textAlign: 'center', fontSize: 26, letterSpacing: 0.875 }}>
-        Skills
-      </Text>
+    <View style={{ width: "100%" }}>
       <View style={styles.formStyle}>
         <TextInput
           style={styles.textInput}
           placeholder="softskills"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.softskills}
           onChangeText={(softskills) => {
             setFormData({ ...formData, softskills });
@@ -22,7 +18,7 @@ export const Skills = ({ formData, setFormData }) => {
         <TextInput
           style={styles.textInput}
           placeholder="hardskills"
-          placeholderTextColor="white"
+          placeholderTextColor="red"
           value={formData.hardskills}
           onChangeText={(hardskills) => {
             setFormData({ ...formData, hardskills });
@@ -35,16 +31,18 @@ export const Skills = ({ formData, setFormData }) => {
 
 const styles = StyleSheet.create({
   formStyle: {
-    backgroundColor: 'red',
-    borderRadius: 15,
-    width: '100%',
+    backgroundColor: "white",
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "red",
+    borderRadius: 8,
+    width: "100%",
     height: 45,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingStart: 20,
     marginVertical: 12,
-    color: 'white',
   },
   textInput: {
-    color: 'white',
+    color: "red",
   },
 });
